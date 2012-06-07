@@ -1,6 +1,8 @@
 # git ignore
 *.swp
 
+#ignore generated executable
+cpp_finder
 
 # Compiled Object files
 *.slo
