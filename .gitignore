@@ -1,3 +1,7 @@
+# git ignore
+.swp
+
+
 # Compiled Object files
 *.slo
 *.lo
