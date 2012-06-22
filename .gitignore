@@ -1,6 +1,9 @@
 # git ignore
 *.swp
 
+#tag file
+tags
+
 #ignore generated executable
 cpp_finder
 
