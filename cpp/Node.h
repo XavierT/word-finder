@@ -13,14 +13,14 @@ class Node
 
     Node(const Node &OriginalNode)
     {
-        // check for self assignement ?
-        std::map<char, Node *>::const_iterator i;
+        edgeMap::const_iterator i;
 
         is_a_word_ = OriginalNode.is_a_word_;
 
+        // copy map content
         for(i = OriginalNode.edges_.begin(); i != OriginalNode.edges_.end(); ++i)
         {
-            edges_.insert(std::make_pair((*i).first, new Node(*(*i).second)));
+            edges_.insert(edgeMap::value_type((*i).first, (*i).second));
         }
 
     }
@@ -35,9 +35,12 @@ class Node
 
     bool is_a_word_termination() { return is_a_word_; }
 
+    typedef std::map<char, Node *> edgeMap;
+
     private:
     bool is_a_word_;
-    std::map<char,Node *> edges_; ///< edges to other nodes, key is the edge value.
+    
+    edgeMap edges_; ///< edges to other nodes, key is the edge value.
 
 
 };
