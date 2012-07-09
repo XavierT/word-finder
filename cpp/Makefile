@@ -1,6 +1,6 @@
 
 CC=g++
-CFLAGS=-Wall -g
+CFLAGS=-Wall -g -Wextra -pedantic
 INCLUDE_PATH=-I/usr/include -I. 
 LIB_PATH= -L/usr/lib
 LIBS = -lstdc++

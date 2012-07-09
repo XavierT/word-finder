@@ -25,22 +25,30 @@ class Node
 
     }
 
+    // Removing a Node actually destroy all the subtree !
     ~Node()
     {
-
+        for(edgeMap::iterator it = edges_.begin(); it != edges_.end(); ++it)
+        {
+            edges_.erase(it);
+        }
     }
 
-    void addEdge(char value);
-    void removeEdge(char value);
+    void add_edge(char value);
+    void remove_edge(char value);
 
     bool is_a_word_termination() { return is_a_word_; }
+    void set_word_termination(bool value)  { is_a_word_ = value; }
+    int  count_successor() {return edges_.size(); }
+    Node * find_successor(char value);
+
 
     typedef std::map<char, Node *> edgeMap;
 
     private:
     bool is_a_word_;
     
-    edgeMap edges_; ///< edges to other nodes, key is the edge value.
+    edgeMap edges_; ///< edges to other nodes, key is the edge value : a single character.
 
 
 };

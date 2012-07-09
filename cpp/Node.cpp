@@ -2,7 +2,7 @@
 #include "Node.h"
 
 
-void Node::addEdge(char value)
+void Node::add_edge(char value)
 {
 
     Node * node = new Node;
@@ -11,8 +11,22 @@ void Node::addEdge(char value)
 
 }
 
-void Node::removeEdge(char value)
+void Node::remove_edge(char value)
 {
     edgeMap::iterator it = edges_.find(value);
     edges_.erase( it);
+}
+
+/**
+ * If a successor with the value as an edge,
+ * return pointer on next Node.
+ */
+Node * Node::find_successor(char value)
+{
+    edgeMap::iterator it = edges_.find(value);
+
+    if( it != edges_.end())
+       return (*it).second;
+    else
+       return NULL;
 }
