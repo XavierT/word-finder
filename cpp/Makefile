@@ -10,8 +10,11 @@ LIBS_TEST = -lcppunit
 all:  Node.o Trie.o main.o
 	$(CC) $(CFLAGS) -o cpp_finder Node.o Trie.o main.o $(LIBS) $(LIB_PATH)
 
-test: Trie.o
-	$(CC) $(CFLAGS) -o test_cpp_finder Trie.o $(LIB_PATH) $(LIBS) $(LIBS_TEST)
+test: 
+	cd ./test && make
+
+clean-test:
+	cd ./test && make clean
 
 main.o: main.cpp
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) -c main.cpp $(LIBS) 
@@ -24,4 +27,3 @@ Node.o: Node.cpp
 
 clean:
 	rm -f *.o cpp_finder
-	rm -f test_cpp_finder
