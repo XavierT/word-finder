@@ -1,6 +1,9 @@
 # git ignore
 *.swp
 
+#ignore generated dependency file
+depend
+
 #tag file
 tags
 
