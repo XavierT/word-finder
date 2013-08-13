@@ -1,6 +1,6 @@
 word-finder
 ===========
-
+Dummy cpp project
 
 cpp
 ===
